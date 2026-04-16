@@ -9,7 +9,8 @@ export function AddTodoForm({ onAdd }: Props) {
   const [text, setText] = useState('');
   const [priority, setPriority] = useState<Priority>('medium');
   const [category, setCategory] = useState<Category>('personal');
-  const [dueDate, setDueDate] = useState('');
+  const today = new Date().toLocaleDateString('sv-SE');
+  const [dueDate, setDueDate] = useState(today);
   const [expanded, setExpanded] = useState(false);
 
   const handleSubmit = (e: FormEvent) => {
@@ -17,7 +18,7 @@ export function AddTodoForm({ onAdd }: Props) {
     if (!text.trim()) return;
     onAdd(text, priority, category, dueDate || undefined);
     setText('');
-    setDueDate('');
+    setDueDate(today);
     setPriority('medium');
     setCategory('personal');
     setExpanded(false);
