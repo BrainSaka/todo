@@ -1,0 +1,56 @@
+/* ===== リセット & ベース ===== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* カラーパレット */
+  --color-bg: #f8f9fa;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f3f5;
+  --color-border: #dee2e6;
+  --color-text: #343a40;
+  --color-text-muted: #868e96;
+  --color-primary: #4dabf7;
+  --color-primary-dark: #339af0;
+  --color-danger: #ff6b6b;
+  --color-danger-dark: #f03e3e;
+  --color-success: #51cf66;
+
+  /* 優先度カラー */
+  --color-high: #ff6b6b;
+  --color-medium: #ffd43b;
+  --color-low: #51cf66;
+
+  /* シャドウ */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08), 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 4px 6px rgba(0,0,0,.07), 0 2px 4px rgba(0,0,0,.06);
+
+  /* フォント */
+  font-family: 'Segoe UI', 'Hiragino Sans', 'Yu Gothic UI', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ダークモード */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #1a1b1e;
+    --color-surface: #25262b;
+    --color-surface-2: #2c2e33;
+    --color-border: #373a40;
+    --color-text: #c1c2c5;
+    --color-text-muted: #5c5f66;
+    --color-primary: #4dabf7;
+    --color-primary-dark: #74c0fc;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,.3);
+    --shadow-md: 0 4px 6px rgba(0,0,0,.3);
+  }
+}
+
+body { min-height: 100vh; }
+#root { min-height: 100vh; }
+ul { list-style: none; }
+button { cursor: pointer; font: inherit; border: none; background: none; }
+input, select { font: inherit; }
